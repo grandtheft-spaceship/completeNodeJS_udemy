@@ -21,3 +21,14 @@
   * In node, the **event loop** attaches listeners for events to finish, then executes the callback function
   * Node is **single-threaded**; this means that our application runs on one, single thread
 * Node.js' package ecosystem, **npm**, is the largest ecosystem of open source libraries in the world
+
+## Node.js Fundamentals (Note App)
+### Using Require
+[Node.js Docs](http://nodejs.org/api)
+  * Complete list of Node.js modules
+
+* **Modules** are units of functionality
+* **require** is a function that lets us load libraries/files in applications
+* **app.js** - initialization file for application
+* **const fs = require('fs');** - here, we are fetching all the contents of the 'fs' module and storing it within the constant 'fs'
+  
