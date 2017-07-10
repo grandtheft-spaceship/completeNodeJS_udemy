@@ -1,11 +1,17 @@
 const fs = require('fs');
 const os = require('os');
+const notes = require('./notes.js');
 
-console.log("Starting app")
+console.log("Starting app.js")
 
-let user = os.userInfo();
+let sum = notes.add(1,2);
+console.log("SUM", sum)
 
-fs.appendFileSync("greetings.txt", `Hello ${user.username}!`);
+// let res = notes.addNote();
+// console.log(res)
+// let user = os.userInfo();
+//
+// fs.appendFileSync("greetings.txt", `Hello ${user.username}! You are ${notes.age}!`);
 
 // fs.appendFile("greetings.txt", "Hello, world", function(err) {
 //   if (err) {

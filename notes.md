@@ -31,4 +31,10 @@
 * **require** is a function that lets us load libraries/files in applications
 * **app.js** - initialization file for application
 * **const fs = require('fs');** - here, we are fetching all the contents of the 'fs' module and storing it within the constant 'fs'
-  
+
+### Requiring Your Own Files
+
+* **module** - variable available in every node file
+* **exports** - an object on the module property that allows us to store properties on the modules themselves
+  * The real goal of **exports** is to be able to export **functions** we can use in other files
+  * NOTE: if you use **arrow functions**, they will NOT bind the 'this' keyword  or **arguments array**
