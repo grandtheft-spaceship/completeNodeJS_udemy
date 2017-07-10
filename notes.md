@@ -51,3 +51,12 @@
     * **node_modules** - directory should not be included in GitHub or altered ever
     * If you delete it or don't have it from a newly cloned repo, you just need to run **npm install**
 * **Lodash** - provides utility functions for working with arrays, numbers, strings, etc.
+
+### Restarting App with Nodemon
+
+* **Nodemon** - npm module that watches the application for changes and **restarts the app** when changes occur
+  * This is a **command-line utility**
+  * **$ npm install nodemon -g**
+    * The **-g** flag here stands for **global** and will install the package as a utility on our machine
+    * This means that it will not get added to our specific project; it won't be in node_modules or package.json
+    * You can shut-down nodemon by pressing **Ctrl + C**
