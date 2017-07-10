@@ -38,3 +38,16 @@
 * **exports** - an object on the module property that allows us to store properties on the modules themselves
   * The real goal of **exports** is to be able to export **functions** we can use in other files
   * NOTE: if you use **arrow functions**, they will NOT bind the 'this' keyword  or **arguments array**
+
+### Using 3rd Party Modules
+
+* To download packages using npm and include them in your application
+* First, in working directory, type **$ npm init** and cycle through the questions
+  * This will create a **package.json** file in our application
+    * This is where we define our third-party modules
+* **$ npm install lodash --save**
+  * The **--save** flag will update our package.json file and include the newly installed module
+  * You should see the new module included in the directory **node_modules**
+    * **node_modules** - directory should not be included in GitHub or altered ever
+    * If you delete it or don't have it from a newly cloned repo, you just need to run **npm install**
+* **Lodash** - provides utility functions for working with arrays, numbers, strings, etc.
