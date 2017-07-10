@@ -60,3 +60,10 @@
     * The **-g** flag here stands for **global** and will install the package as a utility on our machine
     * This means that it will not get added to our specific project; it won't be in node_modules or package.json
     * You can shut-down nodemon by pressing **Ctrl + C**
+
+### Getting Input from User
+
+* We can pass **command-line arguments** to get user input from the terminal
+* These arguments are accessed on the **process** object's **argv** property
+  * **console.log(process.argv)**
+    * **argv** - arguments vector // it is more like an arguments array in JavaScript
