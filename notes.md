@@ -76,3 +76,13 @@
 * We can define **an entire object that gets set to module.exports**
   * In ES6, if the key and value are the same, we only have to write the key
   **$ node app.js add --title="Hello" --body="world"**
+
+### Working with JSON
+
+* JSON using **string** because strings are simply text and they are supported everywhere
+  * Strings is JSON are wrapped in **double quotes**
+* JSON does allow other primitives to be used also, but the entire *object* will still be wrapped in quotes
+* **JSON.stringify()**
+* **JSON.parse()**
+* **fs.writeFileSync(*newfile.json*, *data*)**
+* **fs.readFileSync(*newfile.json*)**
