@@ -67,3 +67,12 @@
 * These arguments are accessed on the **process** object's **argv** property
   * **console.log(process.argv)**
     * **argv** - arguments vector // it is more like an arguments array in JavaScript
+
+### Simplified Inout with Yargs
+
+* **Yargs** - able to build interactive command-line tools by parsing arguments and generating an elegant user interface
+* Contains it's own version of the **argv** variable
+* Yargs allows command-line arguments to be written as **key-value pairs** and will store it as such
+* We can define **an entire object that gets set to module.exports**
+  * In ES6, if the key and value are the same, we only have to write the key
+  **$ node app.js add --title="Hello" --body="world"**
