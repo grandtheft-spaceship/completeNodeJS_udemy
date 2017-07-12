@@ -86,3 +86,21 @@
 * **JSON.parse()**
 * **fs.writeFileSync(*newfile.json*, *data*)**
 * **fs.readFileSync(*newfile.json*)**
+
+### Adding and Saving Notes
+
+* **try / catch statement**
+```
+  try {
+    *code that may or may not throw an error goes here*
+  } catch(error) {
+    *code will only run here if try block fails*
+  }
+```
+* You don't need to put any code in the catch block, but you do need to ALWAYS DEFINE the catch block
+* **filter()** - array method
+* In ES6, if you use an **arrow function** with only one line of code, you can **exclude the curly braces** and put the logic after the fat arrow
+  * The expression will also be automatically **returned**
+```
+  array.filter(() => console.log(someting));
+```

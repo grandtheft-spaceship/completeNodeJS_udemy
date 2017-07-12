@@ -24,16 +24,3 @@ if (command === 'add') {
 } else {
   console.log('Command not recognized');
 }
-
-var tester = {
-  testOne: 'This is a test',
-  testTwo: 'Also a test...',
-};
-
-var testJSON = JSON.stringify(tester);
-
-fs.writeFileSync('test.json', testJSON);
-var data = fs.readFileSync('test.json')
-console.log(data);
-data = JSON.parse(data);
-console.log(data);
