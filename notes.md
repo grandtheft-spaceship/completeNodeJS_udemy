@@ -122,3 +122,13 @@
   * In program, you use `debugger` keyword at the point of the program you want to pause or break
   * You still need to run the file with the **inspect** keyword `$ node inspect file_path/file.js`
   * You can also run the program with **nodemon** `$ nodemon inspect file_path/file.js`
+
+### Debugging via Chrome Dev Tools
+
+* `$ node --inspect-brk`
+  * Tells node we want to run **inspect mode** but we DON'T want to connect via the command line
+  * You can also use nodemon
+* In a Chrome browser - **chrome://inspect**
+  * Click **Open dedicated Dev Tools for Node**
+* To continue throughout the program, you can use the blue play button on the right panel
+* With this method, you would still want to use the **debugger** keyword in your file
