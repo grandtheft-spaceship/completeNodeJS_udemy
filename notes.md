@@ -160,4 +160,27 @@ var functionName = () => *logic goes here* ;
 ```
 * Arrow functions DON'T bind **this** keyword
 * Arrow functions' **arguments** variable points to **global variable object**
-  * Standard function **arguments** variable returns an object with function's arguments 
+  * Standard function **arguments** variable returns an object with function's arguments
+
+## Asynchronous Node.js (Weather App)
+### Async Basics
+
+* `setTimeOut(callback, milliseconds)` - node function that does provides asynchronous action
+
+### Call Stack and Event Loop
+
+* The **call stack** is a simple *data structure* that keeps track of *program execution* in V8
+  * It tracks the functions that are currently executing and the statements that are fired
+  * The call stack can only **run one thing at a time**
+  * The call stack is a simple data structure that allows you to do 2 things:
+    1. You can **add** something to the top of it
+    2. You can **remove** the top item
+  * When your program being running, everything gets wrapped around by the ``main()`` function
+  * When you *call a function*, it gets **added on top of the call stack**
+  * When you *return from a function*, it gets **removed from the call stack**
+
+* When we use *node functions*, like `setTimeOut()`, the **event callback pair** gets registered in the **node apis container**
+* The **callback queue** is where the callback functions from the event callback pairs waiting in the node apis container get stored
+  * The callback functions wait here until the **call stack is empty**
+* The **event loop** is the link between the call stack and the callback queue (the `main()` function also needs to be completed and removed from the call stack)
+  * It checks the call stack to see if its empty; if it is, it will move the top callback function from the callback queue into the call stack
