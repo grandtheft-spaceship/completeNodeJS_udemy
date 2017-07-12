@@ -132,3 +132,5 @@
   * Click **Open dedicated Dev Tools for Node**
 * To continue throughout the program, you can use the blue play button on the right panel
 * With this method, you would still want to use the **debugger** keyword in your file
+
+### Listing Notes
