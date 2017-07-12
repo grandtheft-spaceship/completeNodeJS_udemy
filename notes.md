@@ -106,3 +106,4 @@
 ```
 
 ### Refactoring For Reusability
+### Removing a Note
