@@ -98,7 +98,7 @@
   }
 ```
 * You don't need to put any code in the catch block, but you do need to ALWAYS DEFINE the catch block
-* `filter()` - array method
+* `filter()` - array method which **returns an array where condition is true**
 * In ES6, if you use an **arrow function** with only one line of code, you can **exclude the curly braces** and put the logic after the fat arrow
   * The expression will also be automatically **returned**
 ```
@@ -107,3 +107,4 @@
 
 ### Refactoring For Reusability
 ### Removing a Note
+### Reading Notes and Reusability

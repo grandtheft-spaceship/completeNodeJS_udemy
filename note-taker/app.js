@@ -14,11 +14,13 @@ console.log('Yargs: ', yargs.argv);
 
 if (command === 'add') {
   var note = notes.addNote(argv.title, argv.body);
-  note ? console.log(`New Note - Title: ${note.title}, Body: ${note.body} - has been successfully added!`) : console.log('ERROR: Title already exists');
+  note ? notes.logNote(note) : console.log('ERROR: Title already exists');
+
 } else if (command === 'list'){
   notes.getAll();
 } else if (command === 'read') {
-  notes.getNote(argv.title);
+  var note = notes.getNote(argv.title);
+  note ? notes.logNote(note) : console.log('Note cannot be found');
 } else if (command === 'remove') {
   notes.removeNote(argv.title) ? console.log('Note has been successfully removed!') : console.log('ERROR: Note does not exist');
 } else {
