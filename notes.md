@@ -145,3 +145,19 @@
       * **demand** - defaults to **false**, so you can set it to true to make it required
       * **alias** - allows you to set new flag, example: `--title` -> `-t`
 * `.help()` - now able to use the `--help` flag to see all available options and arguments for a command
+
+### Arrow Functions
+
+* **Statement syntax**
+```
+var functionName = () => {
+  *logic goes here*
+}
+```
+* **Expression syntax** - used to simply **returning** an expression
+```
+var functionName = () => *logic goes here* ;
+```
+* Arrow functions DON'T bind **this** keyword
+* Arrow functions' **arguments** variable points to **global variable object**
+  * Standard function **arguments** variable returns an object with function's arguments 
