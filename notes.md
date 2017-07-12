@@ -134,3 +134,14 @@
 * With this method, you would still want to use the **debugger** keyword in your file
 
 ### Listing Notes
+### Requiring Arguments and Advanced Yargs
+[Yargs Docs](https://www.npmjs.com/package/yargs)
+
+* `.command()` - method used to configure commands for yargs
+  * Takes 3 arguments - **command, description, and options object**
+  * **options** object - each key will be property name and the value will be another object that specifies how that property should work
+    * The **value object** has 3 key-value pairs:
+      * **describe** - a short description
+      * **demand** - defaults to **false**, so you can set it to true to make it required
+      * **alias** - allows you to set new flag, example: `--title` -> `-t`
+* `.help()` - now able to use the `--help` flag to see all available options and arguments for a command
