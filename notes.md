@@ -46,20 +46,20 @@
   * This will create a **package.json** file in our application
     * This is where we define our third-party modules
 * `$ npm install lodash --save`
-  * The **--save** flag will update our package.json file and include the newly installed module
-  * You should see the new module included in the directory **node_modules**
-    * **node_modules** - directory should not be included in GitHub or altered ever
-    * If you delete it or don't have it from a newly cloned repo, you just need to run **npm install**
+  * The `--save` flag will update our package.json file and include the newly installed module
+  * You should see the new module included in the directory `node_modules`
+    * `node_modules` - directory should not be included in GitHub or altered ever
+    * If you delete it or don't have it from a newly cloned repo, you just need to run `npm install`
 * **Lodash** - provides utility functions for working with arrays, numbers, strings, etc.
 
 ### Restarting App with Nodemon
 
 * **Nodemon** - npm module that watches the application for changes and **restarts the app** when changes occur
   * This is a **command-line utility**
-  * **$ npm install nodemon -g**
-    * The **-g** flag here stands for **global** and will install the package as a utility on our machine
+  * `$ npm install nodemon -g`
+    * The `-g` flag here stands for **global** and will install the package as a utility on our machine
     * This means that it will not get added to our specific project; it won't be in node_modules or package.json
-    * You can shut-down nodemon by pressing **Ctrl + C**
+    * You can shut-down nodemon by pressing `Ctrl + C`
 
 ### Getting Input from User
 
@@ -71,21 +71,21 @@
 ### Simplified Inout with Yargs
 
 * **Yargs** - able to build interactive command-line tools by parsing arguments and generating an elegant user interface
-* Contains it's own version of the **argv** variable
+* Contains it's own version of the `argv` variable
 * Yargs allows command-line arguments to be written as **key-value pairs** and will store it as such
 * We can define **an entire object that gets set to module.exports**
   * In ES6, if the key and value are the same, we only have to write the key
-  **$ node app.js add --title="Hello" --body="world"**
+  * `$ node app.js add --title="Hello" --body="world"`
 
 ### Working with JSON
 
 * JSON using **string** because strings are simply text and they are supported everywhere
   * Strings is JSON are wrapped in **double quotes**
 * JSON does allow other primitives to be used also, but the entire *object* will still be wrapped in quotes
-* **JSON.stringify()**
-* **JSON.parse()**
-* **fs.writeFileSync(*newfile.json*, *data*)**
-* **fs.readFileSync(*newfile.json*)**
+* `JSON.stringify()`
+* `JSON.parse()`
+* `fs.writeFileSync(*newfile.json*, *data*)`
+* `fs.readFileSync(*newfile.json*)`
 
 ### Adding and Saving Notes
 
@@ -98,7 +98,7 @@
   }
 ```
 * You don't need to put any code in the catch block, but you do need to ALWAYS DEFINE the catch block
-* **filter()** - array method
+* `filter()` - array method
 * In ES6, if you use an **arrow function** with only one line of code, you can **exclude the curly braces** and put the logic after the fat arrow
   * The expression will also be automatically **returned**
 ```
