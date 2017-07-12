@@ -108,3 +108,17 @@
 ### Refactoring For Reusability
 ### Removing a Note
 ### Reading Notes and Reusability
+### Debugging Node.js Applications
+* **Debeug mode** from the terminal
+  * Program has not started running
+* `$ node inspect file_path/file.js`
+  * In debug mode, there are navigation commands you can use
+  * `list(number)` - prints number of lines you specified above and below the current place where code is paused
+  * `n` - lets you move on to the next statement
+  * `c` - continues program until the end
+* To leave debug mode and debug(*test out code*), type `repl`
+  * In **repl** mode, you have access to the application at the current state where you are paused at
+* **debugger** statement can also be used
+  * In program, you use `debugger` keyword at the point of the program you want to pause or break
+  * You still need to run the file with the **inspect** keyword `$ node inspect file_path/file.js`
+  * You can also run the program with **nodemon** `$ nodemon inspect file_path/file.js`
