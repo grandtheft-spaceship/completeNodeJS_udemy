@@ -165,7 +165,7 @@ var functionName = () => *logic goes here* ;
 ## Asynchronous Node.js (Weather App)
 ### Async Basics
 
-* `setTimeOut(callback, milliseconds)` - node function that does provides asynchronous action
+* `setTimeOut(callback, milliseconds)` - node function that provides asynchronous action
 
 ### Call Stack and Event Loop
 
@@ -184,3 +184,23 @@ var functionName = () => *logic goes here* ;
   * The callback functions wait here until the **call stack is empty**
 * The **event loop** is the link between the call stack and the callback queue (the `main()` function also needs to be completed and removed from the call stack)
   * It checks the call stack to see if its empty; if it is, it will move the top callback function from the callback queue into the call stack
+
+### Callback Functions & APIs
+
+* Google Geocode API
+```
+https://maps.googleapis.com/maps/api/geocode/json?address=757 Market St San Francisco
+```
+* **?** - query string
+* In the browser, white spaces don't matter; in Node, white spaces do matter
+* **Request module** - you can make these kinds of HTTP requests inside of application
+  * [Request Module Docs](https://npmjs.com/package/request)
+
+### Pretty Printing Objects
+
+* If you simply `console.log(body)`, JS will *clip* the data because there are so many objects nested within each other
+* To fix this, you can do `console.log(JSON.stringify(body, undefined, numberOfSpaces))`
+  * `JSON.stringify` - converts JS objects and turn them to JSON strings
+  * The first argument is our object
+  * The second argument is a **filter**, but you can set it to `undefined`
+  * The third argument is the number of spaces for indentation
