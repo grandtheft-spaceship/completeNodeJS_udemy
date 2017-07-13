@@ -204,3 +204,10 @@ https://maps.googleapis.com/maps/api/geocode/json?address=757 Market St San Fran
   * The first argument is our object
   * The second argument is a **filter**, but you can set it to `undefined`
   * The third argument is the number of spaces for indentation
+
+### What Makes Up an HTTP Request?
+
+* The **body** contains the actual data that you'd want from the URL
+* The **response** contains more information regarding the response/request cycle than the **body**
+  * *Headers, Request, Status Code, and Body are some of the things in the Response object*
+* The **error** argument will contains errors in the **error object** when attempting to make a request
