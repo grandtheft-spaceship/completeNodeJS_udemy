@@ -211,3 +211,8 @@ https://maps.googleapis.com/maps/api/geocode/json?address=757 Market St San Fran
 * The **response** contains more information regarding the response/request cycle than the **body**
   * *Headers, Request, Status Code, and Body are some of the things in the Response object*
 * The **error** argument will contains errors in the **error object** when attempting to make a request
+
+### Encoding User Input
+
+* `encodeURIComponent(string)`
+* `decodeURIComponent(encodedString)`
