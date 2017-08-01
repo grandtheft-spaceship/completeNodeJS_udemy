@@ -222,3 +222,7 @@ https://maps.googleapis.com/maps/api/geocode/json?address=757 Market St San Fran
 * When exploring new APIs, it's important to test out different kinds of data, both good and bad, to check what kind of responses you should be expecting
 
 ### Abstracting Callbacks
+
+### Wiring Up Weather Search
+
+* [Dark Sky API](https://darksky.net/dev/)
