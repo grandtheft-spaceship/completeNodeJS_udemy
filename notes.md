@@ -218,3 +218,5 @@ https://maps.googleapis.com/maps/api/geocode/json?address=757 Market St San Fran
 * `decodeURIComponent(encodedString)`
 
 ### Callback Errors
+
+* When exploring new APIs, it's important to test out different kinds of data, both good and bad, to check what kind of responses you should be expecting
