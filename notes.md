@@ -216,3 +216,5 @@ https://maps.googleapis.com/maps/api/geocode/json?address=757 Market St San Fran
 
 * `encodeURIComponent(string)`
 * `decodeURIComponent(encodedString)`
+
+### Callback Errors
