@@ -218,11 +218,77 @@ https://maps.googleapis.com/maps/api/geocode/json?address=757 Market St San Fran
 * `decodeURIComponent(encodedString)`
 
 ### Callback Errors
+* The `if/else` statements within the callback lets us check certain properties to determine whether or not the call(*request*) should be considered a success or a failure
+  * We can check against **response codes** to determine if the request is a success or a failure
+* We can have **machine errors**, like being unable to connect to a network - which usually shows up in the **error object**, OR we can get errors from the **Google server** - like inputting an invalid address
+  * When we pass in *bad data*, such as an invalid address, we'll see something like this:
+  ```
+  {
+    results: [ ],
+    status: "ZERO_RESULTS"
+  }
+  ```
+    * Here, we would use something like the *status text value* to determine if our request was successful or not
 
-* When exploring new APIs, it's important to test out different kinds of data, both good and bad, to check what kind of responses you should be expecting
+* By using the **status property** and the **error object**, we can determine exactly what to do *inside the callback*
+
+  1. Check *IF the error object exists**; if there is an error, we'll log a message to the screen
+    * *~> Problem with connection to Google servers*
+  2. *ELSE IF*, we'll check the *if status property ==== 'ZERO_RESULTS'*
+    * *~> User input invalid data*
+    * **NOTE**, the `status` property we are checking is **specific to the Google Geocoder API**, it is not included with every API
+      * When exploring new APIs, it's important to test out different kinds of data, both good and bad, to check what kind of responses you should be expecting
+  3. *ELSE IF*, we'll check if *status property === 'OK'* and we'll display the intended results
+
+* **NOTE:** when we pass in *invalid data* the **error object DOES NOT get populated** because `request` does not technically see that as an error
+  * It is actually located in the `response` object, which is why we have to use `body.status` in order to access the value
 
 ### Abstracting Callbacks
+
+* In a **relative path**, if the *targeted file has a .js extension*, you can leave it off in the statement
+* The goal of refactoring our code was NOT to get ride of the callback; the goal was to *abstract all the complex logic related to encoding the data, making the request, and checking for errors*
+  * `app.js` should not be responsible for all of those actions; it shouldn't even need to know that an HTTP request was ever made
+  * `app.js` should only care about passing an address to the function and doing something with the result being either an error message or the data in the formatted address - the latitude and longitude
+* The callback we pass to `geocodeAddress()` is going to get called AFTER the request comes back
+  * The callback will take two arguments:
+    * `errorMessage` - which is a string
+    * `results` - which contains the address - the latitude and longitude
+    * **NOTE:** Only either `errorMessage` OR `results` can be available at a time
+      * If we have an error message, we're NOT going to have results
+      * if we have results, we're NOT going to have an error message
+    * This allows us to use an `if/else` statement to determine if our call was successful or not
+    * We use `JSON.stringify()` to *pretty print* `results`
+      * We also pass in `undefined` to skip over the *filtering function*, which we don't need
+      * the `2` specifies our *spacing*; which is going to format the results
+  * When we define `geocodeAddress`, we pass in a `callback` argument along with an `address` argument
+    * We then *call the callback* inside each of the 3 `if/else if` blocks
+    * Instead of calling `console.log()`, we simply call the `callback` with the string
+      * The string is going to be the `errorMessage` that we implemented in `app.js`
+    * The last `else if` statement is different because we DON'T have our *object* and we also need to create an `undefined` variable for the first argument since an error message is NOT going to be provided when the call is successful
+      * To create an `undefined` error message, we call `callback`, passing an `undefined` as the first argument
+      * Then, we can specify our object as the second argument
+        * This *object* is going to be our `results`
+          * `results` has **3 properties**:
+            * `Address`
+            * `Latitude`
+            * `Longitude`
 
 ### Wiring Up Weather Search
 
 * [Dark Sky API](https://darksky.net/dev/)
+* **Forcast Request**
+  * `https://api.darksky.net/forecast/[key]/[latitude],[longitude]`
+    * Returns a lot of information; but what we care about is the `currently` object; which stores all the current weather information
+* We're going to use the **request library** by declaring a `const request` which **equals** `require('request')` library
+  * Now we can make an actual request, similar to `geocoder` API
+  * `request()` is a function that takes two arguments
+    * The **options** object
+      * Contains `url` - The URL we make the request from
+      * `json: true` - tells the **request** library to *parse the body as JSON*
+    * A **callback** function that gets fired *once the HTTP request finishes*
+      * Takes 3 arguments:
+        * `error`
+        * `response`
+        * `body`
+
+### Chaining Callbacks Together
